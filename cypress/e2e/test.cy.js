@@ -7,6 +7,6 @@ describe('first test', () => {
     //cy.get('.ng-select-container').click().clear().type("Ticket", {delay:200})
     //cy.get('input[placeholder="Select Field"]').should('exist').click()
     cy.get('.search-field > .ng-select-searchable > .ng-select-container').click().clear().type("Ticket", {delay:200})
-
+ 
   })
 }) 
