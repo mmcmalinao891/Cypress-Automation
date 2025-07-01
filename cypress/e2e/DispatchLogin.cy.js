@@ -8,7 +8,7 @@ describe('Valid Login', () => {
 
     cy.origin(Urls.DispatchB2cUrl, {
     args: {
-      email: Credentials.email,
+      email: Credentials.email, 
       pass: Credentials.pass
       }
        }, ({ email, pass }) => {

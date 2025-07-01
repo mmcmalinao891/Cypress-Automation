@@ -4,7 +4,7 @@ import { valAssociatedNames } from "../../../support/Features/D1/SG-Opportunitie
 describe('D1 Automation Check List', () => {
     it('should Execute D1 Auomation Check List', () =>{
         loginToDispatch();
-        valAssociatedNames();
+        valAssociatedNames(); 
 
     })
 })
