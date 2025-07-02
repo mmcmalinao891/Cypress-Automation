@@ -5,7 +5,7 @@ export function locTicketContact() {
         cy.get('#mat-input-0').type('test');
         cy.contains('div.label', 'Test Client (USE FOR TESTING)').click();
         cy.contains('div.heading', 'FSDP-24-2706').click();
-        cy.get('#mat-input-2').type('244258-1');
-        cy.contains('div.heading', 'FSDP-2706-244258-1').click();
+        cy.get('#mat-input-2').type('244258');
+        cy.contains('div.heading', 'FSDP-2706-244258').click();
         cy.wait(5000);
 }

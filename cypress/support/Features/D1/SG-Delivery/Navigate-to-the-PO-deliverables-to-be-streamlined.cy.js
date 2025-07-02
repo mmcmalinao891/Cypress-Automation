@@ -1,15 +1,10 @@
-const { locTicketContact } = require("../../support/Features/D1/SG-Delivery/locate-test-ticket-client-contract.cy");
-const { loginToDispatch } = require("../../support/Features/ValidD1Login")
+import { locTicketContact } from "./locate-test-ticket-client-contract.cy";
 
+export function navPoDeliverablesStreamlined() {
 
-describe('Navigate to the PO deliverables to be streamlined', () => {
-    it('should verify that after clicking the PO Count it will redirect to PO deliverables', () => {
-
-        loginToDispatch();
-        locTicketContact();
+    locTicketContact();
         cy.contains('p', 'Summary') .scrollIntoView().realHover().click({ force: true }); 
         cy.get('form.ng-untouched > fieldflow-header > .header-wrapper > h1').should('be.visible');
-        //cy.get('.ng-untouched.ng-star-inserted > :nth-child(6)')
          
         const expectedUrl = 'https://core.dispatch1.com/contracts/2706/tickets/244258/overview?poId=231395&tabName=deliverables';
 
@@ -24,8 +19,6 @@ describe('Navigate to the PO deliverables to be streamlined', () => {
          const actualUrl = stub.getCall(0).args[0];
          console.log('🚀 Opened URL:', actualUrl); // Shows up in browser's DevTools console
          cy.log('window.open called with: ' + actualUrl);
-        });
-       
+        });    
 
-    })
-})
+}
