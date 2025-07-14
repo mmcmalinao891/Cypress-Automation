@@ -2,9 +2,9 @@ export function valAssociatedNames() {
     
     cy.get('.sidebar > :nth-child(3) > :nth-child(1)').click({force:true})
     cy.wait(5000);
-    cy.contains('a', '757').click();
+    cy.contains('a', '786').click();
     cy.wait(5000);
-    cy.contains('a', 'test123').click();
+    cy.contains('a', 'test').click();
     cy.wait(5000);
     cy.get(':nth-child(1) > [headers="table-header-0-1-12"] > .displayname-input').type('e');
     cy.get('.custom-h1').click();

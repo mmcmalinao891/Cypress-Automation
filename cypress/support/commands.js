@@ -25,3 +25,10 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-real-events/support';
+
+//use xpath attributes
+import './commands';
+require('cypress-xpath');
+
+//upload multiple file
+import 'cypress-file-upload';
