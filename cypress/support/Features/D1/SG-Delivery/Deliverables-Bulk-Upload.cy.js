@@ -12,7 +12,7 @@ export function dlvrblsBulkUpld() {
             .click({ force: true });
 
         // Open Deliverables tab and Upload modal
-        cy.xpath("//button[@id='n-tab-3-header']").click();
+        cy.contains('button', 'Deliverables').click();
         cy.xpath("//button[normalize-space()='Upload Deliverable']").click({ force: true });
 
         // Attach files using drag and drop
@@ -34,19 +34,24 @@ export function dlvrblsBulkUpld() {
             .and('contain', 'Deliverables are successfully added.');
 
         // Delete first deliverable
-        deleteDeliverableByRow(1);
+        deleteDeliverableByRow();
 
         // Delete second deliverable
-        deleteDeliverableByRow(2);
+        deleteDeliverableByRow();
 
         // Wait and close modal/dialog
         cy.wait(5000);
-        cy.get('#icon-btn-2').click();
+        cy.xpath("//h4[normalize-space()='Edit PO/WO 231395']")
+        .click()
+        .realPress('Tab')          // Simulate Tab key
+        .realPress('Enter');       // Simulate Enter key
 
 }
 
 function deleteDeliverableByRow(rowNumber) {
-    cy.get(`:nth-child(${rowNumber}) > [headers="table-header-0-7-5"] [buttonstyle="danger"] button .mat-icon`).click();
+   cy.get('.custom-ibm-container').scrollTo('bottom', { duration: 3000 })
+    cy.get(':nth-child(1) > [headers="table-header-0-7-17"] > [buttonstyle="danger"] > button').click();
+  
     cy.get(':nth-child(8) cds-overlay .cds--modal-container ibm-modal-footer .cds--modal-footer .cds--btn--danger').click();
     cy.xpath('//div[@aria-label="Deleted Successfully"]', { timeout: 5000 })
         .should('be.visible')

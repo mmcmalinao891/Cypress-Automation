@@ -9,7 +9,12 @@ import { dlvrblsBulkUpld } from "../../../support/Features/D1/SG-Delivery/Delive
 describe('D1 Automation Check List', () => {
     it('should Execute D1 Auomation Check List', () =>{
         loginToDispatch();
+
+        //Opportunities
         valAssociatedNames(); 
+
+        //Delivery
+        cy.wait(10000);
         navPoDeliverablesStreamlined();
         navPoActivitiesStreamlined();
         dlvrblsBulkUpld();

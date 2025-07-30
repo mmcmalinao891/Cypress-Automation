@@ -32,3 +32,6 @@ require('cypress-xpath');
 
 //upload multiple file
 import 'cypress-file-upload';
+
+//real keyboard events
+import "cypress-real-events/support";
